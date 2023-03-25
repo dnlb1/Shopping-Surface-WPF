@@ -52,7 +52,6 @@ namespace Model.Structures
         {
             return _ArticleNumberSearch(root, Key);
         }
-
         private T _ArticleNumberSearch(TreeElement p, K Key)
         {
             if (p != null)
@@ -75,6 +74,26 @@ namespace Model.Structures
             {
                 return default(T); 
             }
+        }
+        public T SearchByName(N Name)
+        {
+            return _PreOrder(root, Name);
+        }
+        private T _PreOrder(TreeElement p, N Name)
+        {
+            if (p != null)
+            {
+                if (p.ByName.Equals(Name))
+                {
+                    return p.Contant;
+                }
+                else
+                {
+                    _PreOrder(p.left, Name);
+                    _PreOrder(p.right, Name);
+                }
+            }
+            return default(T); //ha nincs ilyen elem akkor null.
         }
 
     }
