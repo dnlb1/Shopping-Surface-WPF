@@ -8,6 +8,10 @@ namespace Model.Structures
 {
     public class SellerList<T> where T : IComparable
     {
-
+        class ListElement
+        {
+            public T Content;
+            public ListElement Next;
+        }
     }
 }
