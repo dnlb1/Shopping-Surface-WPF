@@ -14,8 +14,8 @@ namespace Model.Structures
             public T Contant;
             public K Key;
             public N ByName; //termék neve
-            public TreeElement bal;
-            public TreeElement jobb;
+            public TreeElement left;
+            public TreeElement right;
         }
 
         public void Add(T Contant, K Key, N Name)
@@ -35,16 +35,45 @@ namespace Model.Structures
             {
                 if (p.Key.CompareTo(Key) < 0)
                 {
-                    _Add(ref p.bal, Contant, Key, Name);
+                    _Add(ref p.left, Contant, Key, Name);
                 }
                 else if (p.Key.CompareTo(Key) > 0)
                 {
-                    _Add(ref p.jobb, Contant, Key, Name);
+                    _Add(ref p.right, Contant, Key, Name);
                 }
                 else
                 { 
-                    _Add(ref p.bal, Contant, Key, Name);
+                    _Add(ref p.left, Contant, Key, Name);
                 }
+            }
+        }
+
+        public T ArticleNumberSearch(K Key)
+        {
+            return _ArticleNumberSearch(root, Key);
+        }
+
+        private T _ArticleNumberSearch(TreeElement p, K Key)
+        {
+            if (p != null)
+            {
+                int x = p.Key.CompareTo(Key);
+                if (p.Key.CompareTo(Key) < 0)
+                {
+                    return _ArticleNumberSearch(p.left, Key);
+                }
+                else if (p.Key.CompareTo(Key) > 0)
+                {
+                   return _ArticleNumberSearch(p.right, Key);
+                }
+                else
+                {
+                    return p.Contant;
+                }
+            }
+            else
+            {
+                return default(T); 
             }
         }
 
