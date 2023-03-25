@@ -15,5 +15,14 @@ namespace Model.Structures
         }
         ListElement head;
 
+        public void Add(T Content)
+        {
+            ListElement newElement = new ListElement();
+            newElement.Next = head;
+            newElement.Content = Content;
+            head = newElement;
+        }
+
+
     }
 }
