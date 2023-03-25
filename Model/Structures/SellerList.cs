@@ -49,6 +49,20 @@ namespace Model.Structures
             }
         }
 
+        public bool ProductSearch(T SearchElement)
+        {
+            ListElement p = head;
+            while (p != null)
+            {
+                if (p.Content.Equals(SearchElement))
+                {
+                    return true;
+                }
+                p = p.Next;
+            }
+            return false;
+        }
+
 
     }
 }
