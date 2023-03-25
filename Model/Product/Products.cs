@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Model.Product
 {
-    public class Products
+    public class Products : IComparable
     {
         public int ArticleNumber { get; set; }
         public string ProductName { get; set; }

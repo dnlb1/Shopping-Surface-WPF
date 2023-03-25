@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Model.Product;
+using Model.Structures;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,7 +13,7 @@ namespace Model.Interface
         string TaxNumber { get; set; }
         string ContactPerson { get; set; }
         int Rating { get; set; }
-        
+        SellerList<Products> ProductList { get; set; }
 
     }
 }
