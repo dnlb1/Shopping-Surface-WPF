@@ -63,6 +63,18 @@ namespace Model.Structures
             return false;
         }
 
+        public int Count()
+        {
+            int count = 0;
+            ListElement p = head;
+            while (p != null)
+            {
+                count++;
+                p = p.Next;
+            }
+            return count;
+        }
+
 
     }
 }
