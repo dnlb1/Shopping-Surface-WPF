@@ -11,6 +11,7 @@ namespace Model.Interface
         string TaxNumber { get; set; }
         string ContactPerson { get; set; }
         int Rating { get; set; }
+        
 
     }
 }
