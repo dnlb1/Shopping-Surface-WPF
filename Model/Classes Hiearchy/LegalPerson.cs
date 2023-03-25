@@ -9,8 +9,8 @@ namespace Model.Classes_Hiearchy
 {
     public class LegalPerson : ISeller
     {
-        public string TaxNumber { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string ContactPerson { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int Rating { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string TaxNumber { get; set; }
+        public string ContactPerson { get; set; }
+        public int Rating { get; set; }
     }
 }
