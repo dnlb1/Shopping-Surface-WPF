@@ -13,5 +13,7 @@ namespace Model.Structures
             public T Content;
             public ListElement Next;
         }
+        ListElement head;
+
     }
 }
