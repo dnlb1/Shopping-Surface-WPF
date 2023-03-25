@@ -23,6 +23,32 @@ namespace Model.Structures
             head = newElement;
         }
 
+        public void ArrangedAdd(T Content)
+        {
+            ListElement newElement = new ListElement();
+            newElement.Content = Content;
+
+            ListElement element = head;
+            ListElement helperElement = null;
+
+            while (element != null && element.Content.CompareTo(Content) < 0)
+            {
+                helperElement = element;
+                element = element.Next;
+            }
+
+            if (helperElement == null)
+            {
+                newElement.Next = head;
+                head = newElement;
+            }
+            else
+            {
+                newElement.Next = element;
+                helperElement.Next = newElement;
+            }
+        }
+
 
     }
 }
