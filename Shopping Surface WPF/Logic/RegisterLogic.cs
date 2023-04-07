@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Shopping_Surface_WPF.RegisterWindows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,7 +23,8 @@ namespace Shopping_Surface_WPF.Logic
         }
         public void RegisterPrivate()
         {
-
+            PrivateMemberRegister W = new PrivateMemberRegister();
+            W.ShowDialog();
         }
     }
 }
