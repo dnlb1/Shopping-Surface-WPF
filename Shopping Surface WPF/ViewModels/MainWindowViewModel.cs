@@ -15,6 +15,8 @@ namespace Shopping_Surface_WPF.ViewModels
 {
     class MainWindowViewModel : ObservableRecipient
     {
+        //Logic 
+
         //3 List
         public ObservableCollection<ISeller> RegisteredMembers { get; set; }
         public ObservableCollection<ISeller> SearchedMembers { get; set; }
