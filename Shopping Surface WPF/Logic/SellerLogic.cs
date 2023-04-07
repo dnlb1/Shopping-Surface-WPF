@@ -9,5 +9,8 @@ namespace Shopping_Surface_WPF.Logic
 {
     class SellerLogic
     {
+        IList<ISeller> RegisteredMembers;
+        IList<ISeller> SearchedMembers;
+        IList<ISeller> RewardedMembers;
     }
 }
