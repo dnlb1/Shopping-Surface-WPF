@@ -19,6 +19,11 @@ namespace Shopping_Surface_WPF.ViewModels
         public ObservableCollection<ISeller> SearchedMembers { get; set; }
         public ObservableCollection<ISeller> RewardedMembers { get; set; }
 
+        //Selected Items
+        public ISeller RegisteredSelected { get; set; }
+        public ISeller SearchedSelected { get; set; }
+        public ISeller RewardedSelected { get; set; }
+
         //Buttons - Command
         public ICommand Register { get; set; }
         public ICommand AllProduct { get; set; }
@@ -34,6 +39,8 @@ namespace Shopping_Surface_WPF.ViewModels
                 return (bool)DependencyPropertyDescriptor.FromProperty(prop, typeof(FrameworkElement)).Metadata.DefaultValue;
             }
         }
+
+
 
     }
 }
