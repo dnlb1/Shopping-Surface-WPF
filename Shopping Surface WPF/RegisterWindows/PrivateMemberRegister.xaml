@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:Shopping_Surface_WPF.RegisterWindows"
         xmlns:VM="clr-namespace:Shopping_Surface_WPF.ViewModels.RegisterViewModels"
         mc:Ignorable="d"
-        Title="PrivateMemberRegister" Height="450" Width="800">
+        Title="PrivateMemberRegister" Height="450" Width="800"
+        WindowState="Maximized">
     <Window.DataContext>
         <VM:PrivateMemberRegisterViewModel></VM:PrivateMemberRegisterViewModel>
     </Window.DataContext>

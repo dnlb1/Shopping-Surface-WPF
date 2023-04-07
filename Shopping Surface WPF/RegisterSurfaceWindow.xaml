@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Shopping_Surface_WPF"
         xmlns:VM="clr-namespace:Shopping_Surface_WPF.ViewModels"
         mc:Ignorable="d"
-        Title="RegisterSurfaceWindow" Height="450" Width="800">
+        Title="RegisterSurfaceWindow" Height="450" Width="800" WindowState="Maximized">
     <Window.DataContext>
         <VM:RegisterSurfaceViewModel></VM:RegisterSurfaceViewModel>
     </Window.DataContext>
