@@ -1,4 +1,5 @@
 ﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+using Microsoft.Toolkit.Mvvm.Input;
 using Model.Interface;
 using System;
 using System.Collections.Generic;
@@ -45,6 +46,52 @@ namespace Shopping_Surface_WPF.ViewModels
             RegisteredMembers = new ObservableCollection<ISeller>();
             SearchedMembers = new ObservableCollection<ISeller>();
             RewardedMembers = new ObservableCollection<ISeller>();
+
+            Register = new RelayCommand(() =>
+            {
+
+            },
+            () =>
+            {
+                return true;
+            });
+
+            AllProduct = new RelayCommand(() =>
+            {
+
+            },
+           () =>
+           {
+               return true;
+           });
+
+            ItemNumberSearch = new RelayCommand(() =>
+            {
+
+            },
+            () =>
+            {
+                return true;
+            });
+
+            NameSearch = new RelayCommand(() =>
+            {
+
+            },
+            () =>
+            {
+                return true;
+            });
+
+            RewardMember = new RelayCommand(() =>
+            {
+
+            },
+            () =>
+            {
+                return true;
+            });
+
         }
 
     }
