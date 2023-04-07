@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model.Classes_Hiearchy;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,6 @@ namespace Shopping_Surface_WPF.ViewModels.RegisterViewModels
 {
     class PrivateMemberRegisterViewModel
     {
+        public PrivatePerson Person { get; set; }
     }
 }
