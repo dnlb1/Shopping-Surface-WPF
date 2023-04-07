@@ -27,5 +27,9 @@ namespace Shopping_Surface_WPF.Logic
             SearchedMembers = searchedMembers;
             RewardedMembers = rewardedMembers;
         }
+        public void RegisterMember()
+        {
+            Register.OpenRegisterSurface();
+        }
     }
 }
