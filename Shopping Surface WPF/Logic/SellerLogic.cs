@@ -1,4 +1,5 @@
 ﻿using Model.Interface;
+using Shopping_Surface_WPF.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +10,16 @@ namespace Shopping_Surface_WPF.Logic
 {
     class SellerLogic : ISellerLogic
     {
+        IRegisterOpenerLogic Register;
+
         IList<ISeller> RegisteredMembers;
         IList<ISeller> SearchedMembers;
         IList<ISeller> RewardedMembers;
+
+        public SellerLogic(IRegisterOpenerLogic Register)
+        {
+            this.Register = Register;
+        }
 
         public void Setup(IList<ISeller> registeredMembers, IList<ISeller> searchedMembers, IList<ISeller> rewardedMembers)
         {
