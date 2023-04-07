@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Shopping_Surface_WPF.Logic
 {
-    class SellerLogic
+    class SellerLogic : ISellerLogic
     {
         IList<ISeller> RegisteredMembers;
         IList<ISeller> SearchedMembers;
