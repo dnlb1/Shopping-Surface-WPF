@@ -4,8 +4,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Shopping_Surface_WPF.RegisterWindows"
+        xmlns:VM="clr-namespace:Shopping_Surface_WPF.ViewModels.RegisterViewModels"
         mc:Ignorable="d"
         Title="PrivateMemberRegister" Height="450" Width="800">
+    <Window.DataContext>
+        <VM:PrivateMemberRegisterViewModel></VM:PrivateMemberRegisterViewModel>
+    </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"></RowDefinition>
