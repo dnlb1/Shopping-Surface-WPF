@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Toolkit.Mvvm.DependencyInjection;
+using Shopping_Surface_WPF.Helpers;
 using Shopping_Surface_WPF.Logic;
 using System;
 using System.Collections.Generic;
@@ -21,6 +22,7 @@ namespace Shopping_Surface_WPF
             Ioc.Default.ConfigureServices(new ServiceCollection()
                 .AddSingleton<ISellerLogic, SellerLogic>()
                 .AddSingleton<IRegisterLogic,RegisterLogic>()
+                .AddSingleton<IRegisterOpenerLogic,RegisterOpenerLogic>()
                 .BuildServiceProvider());
         }
     }
