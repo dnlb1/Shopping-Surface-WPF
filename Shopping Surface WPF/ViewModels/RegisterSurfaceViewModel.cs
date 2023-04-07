@@ -30,7 +30,7 @@ namespace Shopping_Surface_WPF.ViewModels
                 return (bool)DependencyPropertyDescriptor.FromProperty(prop, typeof(FrameworkElement)).Metadata.DefaultValue;
             }
         }
-        public RegisterSurfaceViewModel() : this(IsInDesignMode ? null : Ioc.Default.GetService<ISellerLogic>())
+        public RegisterSurfaceViewModel() : this(IsInDesignMode ? null : Ioc.Default.GetService<IRegisterLogic>())
         {
 
         }
