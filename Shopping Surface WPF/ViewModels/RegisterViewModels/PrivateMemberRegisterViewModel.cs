@@ -1,7 +1,9 @@
 ﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+using Microsoft.Toolkit.Mvvm.DependencyInjection;
 using Microsoft.Toolkit.Mvvm.Input;
 using Model.Classes_Hiearchy;
 using Model.Product;
+using Shopping_Surface_WPF.Logic;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -17,6 +19,7 @@ namespace Shopping_Surface_WPF.ViewModels.RegisterViewModels
 {
     class PrivateMemberRegisterViewModel : ObservableRecipient
     {
+        ISellerLogic logic;
         public PrivatePerson Person { get; set; }
         public Products Product { get; set; }
         //Product
@@ -91,9 +94,13 @@ namespace Shopping_Surface_WPF.ViewModels.RegisterViewModels
                 return (bool)DependencyPropertyDescriptor.FromProperty(prop, typeof(FrameworkElement)).Metadata.DefaultValue;
             }
         }
-
-        public PrivateMemberRegisterViewModel()
+        public PrivateMemberRegisterViewModel() :this(IsInDesignMode ? null : Ioc.Default.GetService<ISellerLogic>())
         {
+
+        }
+        public PrivateMemberRegisterViewModel(ISellerLogic logic)
+        {
+            this.logic = logic;
             this.Person = new PrivatePerson();
             this.Product = new Products();
 
