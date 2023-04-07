@@ -15,7 +15,7 @@ namespace Shopping_Surface_WPF.ViewModels
 {
     class RegisterSurfaceViewModel : ObservableRecipient
     {
-        ISellerLogic logic;
+        IRegisterLogic logic;
 
         //Buttons
         public ICommand AddPrivate { get; set; }
@@ -35,11 +35,12 @@ namespace Shopping_Surface_WPF.ViewModels
 
         }
 
-        public RegisterSurfaceViewModel(ISellerLogic logic)
+        public RegisterSurfaceViewModel(IRegisterLogic logic)
         {
             this.logic = logic;
             AddPrivate = new RelayCommand(() =>
             {
+                logic.RegisterPrivate();
             },
             () =>
             {
