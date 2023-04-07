@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Input;
 
 namespace Shopping_Surface_WPF.ViewModels
 {
@@ -18,7 +19,13 @@ namespace Shopping_Surface_WPF.ViewModels
         public ObservableCollection<ISeller> SearchedMembers { get; set; }
         public ObservableCollection<ISeller> RewardedMembers { get; set; }
 
-
+        //Buttons - Command
+        public ICommand Register { get; set; }
+        public ICommand AllProduct { get; set; }
+        public ICommand ItemNumberSearch { get; set; }
+        public ICommand NameSearch { get; set; }
+        public ICommand RewardMember { get; set; }
+        
         public static bool IsInDesignMode
         {
             get
