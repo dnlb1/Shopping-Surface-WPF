@@ -40,7 +40,12 @@ namespace Shopping_Surface_WPF.ViewModels
             }
         }
 
-
+        public MainWindowViewModel()
+        {
+            RegisteredMembers = new ObservableCollection<ISeller>();
+            SearchedMembers = new ObservableCollection<ISeller>();
+            RewardedMembers = new ObservableCollection<ISeller>();
+        }
 
     }
 }
