@@ -35,7 +35,20 @@ namespace Shopping_Surface_WPF.ViewModels
         public ICommand ItemNumberSearch { get; set; }
         public ICommand NameSearch { get; set; }
         public ICommand RewardMember { get; set; }
-        
+
+        //Other
+        private Visibility vis;
+
+        public Visibility Vis
+        {
+            get { return vis; }
+            set 
+            { 
+                SetProperty(ref vis, value);
+                (Register as RelayCommand).NotifyCanExecuteChanged();
+            }
+        }
+
         public static bool IsInDesignMode
         {
             get
@@ -61,7 +74,9 @@ namespace Shopping_Surface_WPF.ViewModels
 
             Register = new RelayCommand(() =>
             {
+                Vis = Visibility.Hidden;
                 logic.RegisterMember();
+                Vis = Visibility.Visible;
             },
             () =>
             {
