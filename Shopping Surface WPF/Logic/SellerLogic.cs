@@ -31,5 +31,9 @@ namespace Shopping_Surface_WPF.Logic
         {
             Register.OpenRegisterSurface();
         }
+        public void AddToRegisteredMembers(ISeller Person)
+        {
+            RegisteredMembers.Add(Person);
+        }
     }
 }

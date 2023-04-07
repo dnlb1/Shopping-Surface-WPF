@@ -106,6 +106,7 @@ namespace Shopping_Surface_WPF.ViewModels.RegisterViewModels
 
             AddToPersonProduct = new RelayCommand(() => 
             { 
+                //Maybe need logic, but its faster 
                 Product.ProductName = ProductName;
                 Product.ArticleNumber = ArticleNumber;
                 Person.ProductList.Add(Product);
@@ -114,7 +115,10 @@ namespace Shopping_Surface_WPF.ViewModels.RegisterViewModels
             }, () => { return (ProductName != "" && ProductName != null) && ArticleNumber!=0; });
             AddToList = new RelayCommand(() =>
             {
-
+                Person.TaxNumber = Taxnumber;
+                Person.Rating = Rating;
+                Person.ContactPerson = Name;
+                logic.AddToRegisteredMembers(Person);
             },
             () =>
             {

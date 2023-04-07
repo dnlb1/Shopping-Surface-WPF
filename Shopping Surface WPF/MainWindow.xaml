@@ -25,7 +25,19 @@
 
         <Button Content="Regisztráció" Margin="10" Command="{Binding Register}"></Button>
 
-        <ListBox Grid.Row="1" BorderThickness="0" ItemsSource="{Binding RegisteredMembers}" SelectedItem="{Binding RegisteredSelected}"></ListBox>
+        <ListBox Grid.Row="1" BorderThickness="0" ItemsSource="{Binding RegisteredMembers}" SelectedItem="{Binding RegisteredSelected}" HorizontalContentAlignment="Stretch">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderThickness="1" BorderBrush="Black">
+                        <StackPanel Orientation="Vertical">
+                            <Label Content="{Binding ContactPerson}" ContentStringFormat="Neve: {0}"></Label>
+                            <Label Content="{Binding TaxNumber}" ContentStringFormat="Neve: {0}"></Label>
+                            <Label Content="{Binding Rating}" ContentStringFormat="Neve: {0}"></Label>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
 
         <Grid Grid.Column="1">
             <Grid.ColumnDefinitions>

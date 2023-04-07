@@ -26,10 +26,15 @@ namespace Shopping_Surface_WPF.RegisterWindows
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            Lb.Items.Clear();
             Label l = new Label();
             l.Content = "Termék hozzáadva!";
             Lb.Items.Add(l);
-            Lb.Items.Clear();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = true;
         }
     }
 }
