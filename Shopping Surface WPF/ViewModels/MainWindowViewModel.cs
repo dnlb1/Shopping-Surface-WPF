@@ -1,6 +1,8 @@
 ﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+using Microsoft.Toolkit.Mvvm.DependencyInjection;
 using Microsoft.Toolkit.Mvvm.Input;
 using Model.Interface;
+using Shopping_Surface_WPF.Logic;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -16,7 +18,7 @@ namespace Shopping_Surface_WPF.ViewModels
     class MainWindowViewModel : ObservableRecipient
     {
         //Logic 
-
+        ISellerLogic logic;
         //3 List
         public ObservableCollection<ISeller> RegisteredMembers { get; set; }
         public ObservableCollection<ISeller> SearchedMembers { get; set; }
@@ -43,11 +45,19 @@ namespace Shopping_Surface_WPF.ViewModels
             }
         }
 
-        public MainWindowViewModel()
+        public MainWindowViewModel() : this(IsInDesignMode ? null : Ioc.Default.GetService<ISellerLogic>()) 
         {
+
+        }
+
+        public MainWindowViewModel(ISellerLogic logic)
+        {
+            this.logic = logic;
             RegisteredMembers = new ObservableCollection<ISeller>();
             SearchedMembers = new ObservableCollection<ISeller>();
             RewardedMembers = new ObservableCollection<ISeller>();
+
+            logic.Setup(RegisteredMembers, SearchedMembers, RewardedMembers);
 
             Register = new RelayCommand(() =>
             {
