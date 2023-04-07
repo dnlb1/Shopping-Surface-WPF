@@ -61,7 +61,6 @@ namespace Shopping_Surface_WPF.ViewModels
 
             Register = new RelayCommand(() =>
             {
-
             },
             () =>
             {
