@@ -1,5 +1,6 @@
 ﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
 using Microsoft.Toolkit.Mvvm.DependencyInjection;
+using Microsoft.Toolkit.Mvvm.Input;
 using Shopping_Surface_WPF.Logic;
 using System;
 using System.Collections.Generic;
@@ -8,12 +9,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Input;
 
 namespace Shopping_Surface_WPF.ViewModels
 {
     class RegisterSurfaceViewModel : ObservableRecipient
     {
         ISellerLogic logic;
+
+        //Buttons
+        public ICommand AddPrivate { get; set; }
+        public ICommand AddLTD { get; set; }
+        public ICommand AddLimited { get; set; }
+        public ICommand AddLegal { get; set; }
         public static bool IsInDesignMode
         {
             get
@@ -30,6 +38,34 @@ namespace Shopping_Surface_WPF.ViewModels
         public RegisterSurfaceViewModel(ISellerLogic logic)
         {
             this.logic = logic;
+            AddPrivate = new RelayCommand(() =>
+            {
+            },
+            () =>
+            {
+                return true;
+            });
+            AddLTD = new RelayCommand(() =>
+            {
+            },
+            () =>
+            {
+                return true;
+            });
+            AddLimited = new RelayCommand(() =>
+            {
+            },
+            () =>
+            {
+                return true;
+            });
+            AddLegal = new RelayCommand(() =>
+            {
+            },
+            () =>
+            {
+                return true;
+            });
         }
 
     }
