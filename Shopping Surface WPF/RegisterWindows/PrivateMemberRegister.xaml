@@ -7,6 +7,68 @@
         mc:Ignorable="d"
         Title="PrivateMemberRegister" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="6*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Viewbox>
+            <Label Content="Magánszemély regisztráció"></Label>
+        </Viewbox>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Label Content="Személy" HorizontalAlignment="Center"></Label>
+                <Label></Label>
+                <Label Content="Név:" Grid.Row="1"></Label>
+                <TextBox Grid.Row="2" Margin="5"></TextBox>
+                <Label Content="Adószám:" Grid.Row="3"></Label>
+                <TextBox Grid.Row="4" Margin="5"></TextBox>
+                <Label Content="Értékelés" Grid.Row="5"></Label>
+                <TextBox Grid.Row="6" Margin="5"></TextBox>
+            </Grid>
+
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label Content="Termék" HorizontalAlignment="Center" Grid.Column="1"></Label>
+                <Label></Label>
+                <Label Content="Cikkszám:" Grid.Row="1"></Label>
+                <TextBox Grid.Row="2" Margin="5"></TextBox>
+                <Label Content="Termék neve:" Grid.Row="3"></Label>
+                <TextBox Grid.Row="4" Margin="5"></TextBox>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="1" Content="Regisztrálok!" Margin="10"></Button>
+        </Grid>
     </Grid>
 </Window>
