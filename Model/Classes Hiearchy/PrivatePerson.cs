@@ -14,7 +14,7 @@ namespace Model.Classes_Hiearchy
     {
         public PrivatePerson()
         {
-
+            this.ProductList = new SellerList<Products>();
         }
         public PrivatePerson(string taxNumber, string contactPerson, int rating, SellerList<Products> productList)
         {
