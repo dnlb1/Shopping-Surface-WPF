@@ -12,5 +12,12 @@ namespace Shopping_Surface_WPF.Logic
         IList<ISeller> RegisteredMembers;
         IList<ISeller> SearchedMembers;
         IList<ISeller> RewardedMembers;
+
+        public void Setup(IList<ISeller> registeredMembers, IList<ISeller> searchedMembers, IList<ISeller> rewardedMembers)
+        {
+            RegisteredMembers = registeredMembers;
+            SearchedMembers = searchedMembers;
+            RewardedMembers = rewardedMembers;
+        }
     }
 }
