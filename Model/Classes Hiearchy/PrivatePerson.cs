@@ -12,6 +12,10 @@ namespace Model.Classes_Hiearchy
 {
     public class PrivatePerson : ObservableObject, ISeller
     {
+        public PrivatePerson()
+        {
+
+        }
         public PrivatePerson(string taxNumber, string contactPerson, int rating, SellerList<Products> productList)
         {
             TaxNumber = taxNumber;

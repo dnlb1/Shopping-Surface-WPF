@@ -1,4 +1,5 @@
 ﻿using Model.Classes_Hiearchy;
+using Model.Product;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,6 +13,7 @@ namespace Shopping_Surface_WPF.ViewModels.RegisterViewModels
     class PrivateMemberRegisterViewModel
     {
         public PrivatePerson Person { get; set; }
+        public Products Product { get; set; }
         public static bool IsInDesignMode
         {
             get
@@ -23,7 +25,8 @@ namespace Shopping_Surface_WPF.ViewModels.RegisterViewModels
 
         public PrivateMemberRegisterViewModel()
         {
-
+            this.Person = new PrivatePerson();
+            this.Product = new Products();
         }
     }
 }

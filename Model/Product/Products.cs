@@ -22,7 +22,10 @@ namespace Model.Product
             get { return productname; }
             set { SetProperty(ref productname, value); }
         }
+        public Products()
+        {
 
+        }
         public Products(int ArticleNumber, string ProductName)
         {
             this.ArticleNumber = ArticleNumber;
