@@ -20,6 +20,7 @@ namespace Shopping_Surface_WPF
         {
             Ioc.Default.ConfigureServices(new ServiceCollection()
                 .AddSingleton<ISellerLogic, SellerLogic>()
+                .AddSingleton<IRegisterLogic,RegisterLogic>()
                 .BuildServiceProvider());
         }
     }
