@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,10 +7,22 @@ using System.Threading.Tasks;
 
 namespace Model.Product
 {
-    public class Products : IComparable
+    public class Products : ObservableObject, IComparable
     {
-        public int ArticleNumber { get; set; }
-        public string ProductName { get; set; }
+        private int articlenumber;
+        public int ArticleNumber
+        {
+            get { return articlenumber; }
+            set { SetProperty(ref articlenumber, value); }
+        }
+        
+        private string productname;
+        public string ProductName
+        {
+            get { return productname; }
+            set { SetProperty(ref productname, value); }
+        }
+
         public Products(int ArticleNumber, string ProductName)
         {
             this.ArticleNumber = ArticleNumber;

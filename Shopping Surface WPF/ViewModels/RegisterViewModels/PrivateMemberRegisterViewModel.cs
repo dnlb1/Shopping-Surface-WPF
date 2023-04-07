@@ -20,5 +20,10 @@ namespace Shopping_Surface_WPF.ViewModels.RegisterViewModels
                 return (bool)DependencyPropertyDescriptor.FromProperty(prop, typeof(FrameworkElement)).Metadata.DefaultValue;
             }
         }
+
+        public PrivateMemberRegisterViewModel()
+        {
+
+        }
     }
 }
