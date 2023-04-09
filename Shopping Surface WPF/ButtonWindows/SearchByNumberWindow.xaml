@@ -22,7 +22,7 @@
         </Grid.RowDefinitions>
         <Label Content="Cikkszám szerinti keresés" VerticalContentAlignment="Center"></Label>
         <TextBox Text="{Binding ArticleNumber, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" VerticalContentAlignment="Center"></TextBox>
-        <Button Grid.Row="2" Content="Mehet" Command="{Binding Search}"></Button>
+        <Button Grid.Row="2" Content="Mehet" Command="{Binding Search}" Click="Button_Click"></Button>
     </Grid>
 
 </Window>
