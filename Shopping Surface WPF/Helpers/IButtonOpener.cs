@@ -3,5 +3,6 @@
     interface IButtonOpener
     {
         void SearchByArticle();
+        void SearchByName();
     }
 }
