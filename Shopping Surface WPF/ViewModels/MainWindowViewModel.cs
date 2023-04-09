@@ -45,6 +45,7 @@ namespace Shopping_Surface_WPF.ViewModels
         public ICommand ItemNumberSearch { get; set; }
         public ICommand NameSearch { get; set; }
         public ICommand RewardMember { get; set; }
+        public ICommand Clear { get; set; }
 
         //Other
         private Visibility vis;
@@ -124,6 +125,15 @@ namespace Shopping_Surface_WPF.ViewModels
             RewardMember = new RelayCommand(() =>
             {
 
+            },
+            () =>
+            {
+                return true;
+            });
+
+            Clear = new RelayCommand(() =>
+            {
+                logic.ClearList();
             },
             () =>
             {

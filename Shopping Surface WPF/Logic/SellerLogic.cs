@@ -25,6 +25,10 @@ namespace Shopping_Surface_WPF.Logic
             this.Tree = new BinaryTree<Products, string, int>();
         }
 
+        public void ClearList()
+        {
+            SearchedMembers.Clear();
+        }
         public void Setup(IList<ISeller> registeredMembers, IList<Products> searchedMembers, IList<ISeller> rewardedMembers)
         {
             RegisteredMembers = registeredMembers;
