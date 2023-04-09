@@ -61,7 +61,7 @@
                 <RowDefinition Height="8*"></RowDefinition>
                 <RowDefinition Height="1*"></RowDefinition>
             </Grid.RowDefinitions>
-            <ListBox Grid.Row="1" Grid.Column="1"  BorderThickness="0" ItemsSource="{Binding SearchedMembers}">
+            <ListBox BorderThickness="0" ItemsSource="{Binding SearchedMembers}">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Border>
