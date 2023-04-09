@@ -109,7 +109,7 @@ namespace Shopping_Surface_WPF.ViewModels.RegisterViewModels
                 //Maybe need logic, but its faster 
                 Product.ProductName = ProductName;
                 Product.ArticleNumber = ArticleNumber;
-                Person.ProductList.Add(Product);
+                Person.ProductList.ArrangedAdd(Product);
                 logic.AddToTree(Product);
                 (AddToList as RelayCommand).NotifyCanExecuteChanged();
 
