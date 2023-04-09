@@ -56,6 +56,7 @@ namespace Shopping_Surface_WPF.ViewModels
             });
             AddLimited = new RelayCommand(() =>
             {
+                logic.RegisterLimited();
             },
             () =>
             {
