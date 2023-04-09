@@ -62,6 +62,7 @@ namespace Shopping_Surface_WPF.ViewModels
             });
             AddLegal = new RelayCommand(() =>
             {
+                logic.RegisterLegal();
             },
             () =>
             {
