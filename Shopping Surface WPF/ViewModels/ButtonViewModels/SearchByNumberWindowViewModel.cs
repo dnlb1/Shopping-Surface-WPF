@@ -22,16 +22,29 @@ namespace Shopping_Surface_WPF.ViewModels.ButtonViewModels
             }
         }
 
+        private int articlenumber;
+
+        public int ArticleNumber
+        {
+            get { return articlenumber; }
+            set 
+            { 
+                SetProperty(ref articlenumber, value);
+                (Search as RelayCommand).NotifyCanExecuteChanged();
+            }
+        }
+
+
         public ICommand Search { get; set; }
 
         public SearchByNumberWindowViewModel()
         {
             Search = new RelayCommand(() =>
             {
-
+                //logic
             },
             () =>
-            { return false; });
+            { return ArticleNumber != null; });
         }
     }
 }
