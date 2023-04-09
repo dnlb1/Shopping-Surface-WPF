@@ -51,7 +51,7 @@ namespace Shopping_Surface_WPF.ViewModels.ButtonViewModels
                 logic.AllProductByArticleNumber(ArticleNumber);
             },
             () =>
-            { return ArticleNumber != 0; });
+            { return ArticleNumber > 0; });
         }
     }
 }

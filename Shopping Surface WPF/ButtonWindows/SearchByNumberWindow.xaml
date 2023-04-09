@@ -6,18 +6,23 @@
         xmlns:local="clr-namespace:Shopping_Surface_WPF.ButtonWindows"
         xmlns:VM="clr-namespace:Shopping_Surface_WPF.ViewModels.ButtonViewModels"
         mc:Ignorable="d"
-        Title="Search" Height="95" Width="345">
+        Title="Search" Height="207" Width="372">
     <Window.DataContext>
         <VM:SearchByNumberWindowViewModel></VM:SearchByNumberWindowViewModel>
     </Window.DataContext>
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="345*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
         </Grid.RowDefinitions>
-        <Label Content="Cikkszám szerinti keresés"></Label>
-        <TextBox Grid.Row="1" Text="{Binding ArticleNumber}" VerticalContentAlignment="Center"></TextBox>
+        <Label Content="Cikkszám szerinti keresés" VerticalContentAlignment="Center"></Label>
+        <TextBox Text="{Binding ArticleNumber, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" VerticalContentAlignment="Center"></TextBox>
         <Button Grid.Row="2" Content="Mehet" Command="{Binding Search}"></Button>
     </Grid>
+
 </Window>
