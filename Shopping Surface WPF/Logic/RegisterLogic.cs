@@ -11,22 +11,19 @@ namespace Shopping_Surface_WPF.Logic
     {
         public void RegisterLegal()
         {
-            LegalMemberRegister W = new LegalMemberRegister();
-            W.ShowDialog();
+            new LegalMemberRegister().ShowDialog();
         }
         public void RegisterLimited()
         {
-
+            new LimitedPartnerShipRegister().ShowDialog();
         }
         public void RegisterLTD()
         {
-            LTDMemberRegister W = new LTDMemberRegister();
-            W.ShowDialog();
+            new LTDMemberRegister().ShowDialog();
         }
         public void RegisterPrivate()
         {
-            PrivateMemberRegister W = new PrivateMemberRegister();
-            W.ShowDialog();
+            new PrivateMemberRegister().ShowDialog();
         }
     }
 }
