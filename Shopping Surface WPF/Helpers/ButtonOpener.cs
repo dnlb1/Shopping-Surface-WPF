@@ -15,7 +15,7 @@ namespace Shopping_Surface_WPF.Helpers
         }
         public void SearchByName()
         {
-            new SearchByNumberWindow().ShowDialog();
+            new SearchByNameWindow().ShowDialog();
         }
     }
 }

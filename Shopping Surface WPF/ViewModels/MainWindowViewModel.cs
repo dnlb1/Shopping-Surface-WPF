@@ -115,7 +115,7 @@ namespace Shopping_Surface_WPF.ViewModels
 
             NameSearch = new RelayCommand(() =>
             {
-
+                opener.SearchByName();
             },
             () =>
             {
