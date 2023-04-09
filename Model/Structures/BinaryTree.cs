@@ -90,11 +90,8 @@ namespace Model.Structures
                 {
                     products.Add(p.Contant);
                 }
-                else
-                {
-                    _PreOrder(p.left, Name);
-                    _PreOrder(p.right, Name);
-                }
+                _PreOrder(p.left, Name);
+                _PreOrder(p.right, Name);
             }
         }
 
