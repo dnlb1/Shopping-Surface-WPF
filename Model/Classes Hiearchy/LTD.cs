@@ -13,5 +13,9 @@ namespace Model.Classes_Hiearchy
         public LTD(string taxNumber, string contactPerson, int rating, SellerList<Products> productList) : base(taxNumber, contactPerson, rating, productList)
         {
         }
+        public LTD()
+        {
+
+        }
     }
 }
