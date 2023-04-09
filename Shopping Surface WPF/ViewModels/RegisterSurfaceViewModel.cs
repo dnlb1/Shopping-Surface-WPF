@@ -48,6 +48,7 @@ namespace Shopping_Surface_WPF.ViewModels
             });
             AddLTD = new RelayCommand(() =>
             {
+                logic.RegisterLTD();
             },
             () =>
             {
