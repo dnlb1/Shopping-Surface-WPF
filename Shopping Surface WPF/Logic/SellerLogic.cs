@@ -39,5 +39,9 @@ namespace Shopping_Surface_WPF.Logic
         {
             RegisteredMembers.Add(Person);
         }
+        public void AddToTree(Products Product)
+        {
+            Tree.Add(Product, Product.ArticleNumber, Product.ProductName);
+        }
     }
 }
