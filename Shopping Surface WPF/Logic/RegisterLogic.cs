@@ -20,7 +20,8 @@ namespace Shopping_Surface_WPF.Logic
         }
         public void RegisterLTD()
         {
-
+            LTDMemberRegister W = new LTDMemberRegister();
+            W.ShowDialog();
         }
         public void RegisterPrivate()
         {
