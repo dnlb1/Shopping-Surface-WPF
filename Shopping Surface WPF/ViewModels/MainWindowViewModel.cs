@@ -89,7 +89,7 @@ namespace Shopping_Surface_WPF.ViewModels
             },
            () =>
            {
-               return true;
+               return SearchedSelected !=null;
            });
 
             ItemNumberSearch = new RelayCommand(() =>

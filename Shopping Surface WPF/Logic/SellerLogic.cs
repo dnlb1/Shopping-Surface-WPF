@@ -43,5 +43,9 @@ namespace Shopping_Surface_WPF.Logic
         {
             Tree.Add(Product, Product.ArticleNumber, Product.ProductName);
         }
+        public void AllProductPerson(ISeller Person)
+        {
+            //Copy the person product list into Ilist
+        }
     }
 }
