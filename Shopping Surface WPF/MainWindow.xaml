@@ -31,9 +31,9 @@
                 <DataTemplate>
                     <Border BorderThickness="1" BorderBrush="Black">
                         <StackPanel Orientation="Vertical">
-                            <Label Content="{Binding ContactPerson}" ContentStringFormat="Neve: {0}"></Label>
-                            <Label Content="{Binding TaxNumber}" ContentStringFormat="Neve: {0}"></Label>
-                            <Label Content="{Binding Rating}" ContentStringFormat="Neve: {0}"></Label>
+                            <Label Content="{Binding ContactPerson}" ContentStringFormat="Név: {0}"></Label>
+                            <Label Content="{Binding TaxNumber}" ContentStringFormat="Adószám: {0}"></Label>
+                            <Label Content="{Binding Rating}" ContentStringFormat="Értékelés: {0}"></Label>
                         </StackPanel>
                     </Border>
                 </DataTemplate>
