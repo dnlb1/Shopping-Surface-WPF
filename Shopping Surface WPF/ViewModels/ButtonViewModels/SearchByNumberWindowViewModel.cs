@@ -1,5 +1,7 @@
 ﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+using Microsoft.Toolkit.Mvvm.DependencyInjection;
 using Microsoft.Toolkit.Mvvm.Input;
+using Shopping_Surface_WPF.Logic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +15,7 @@ namespace Shopping_Surface_WPF.ViewModels.ButtonViewModels
 {
     class SearchByNumberWindowViewModel : ObservableRecipient
     {
+        ISellerLogic logic;
         public static bool IsInDesignMode
         {
             get
@@ -34,11 +37,15 @@ namespace Shopping_Surface_WPF.ViewModels.ButtonViewModels
             }
         }
 
-
         public ICommand Search { get; set; }
 
-        public SearchByNumberWindowViewModel()
+        public SearchByNumberWindowViewModel() : this(IsInDesignMode ? null : Ioc.Default.GetService<ISellerLogic>())
         {
+
+        }
+        public SearchByNumberWindowViewModel(ISellerLogic logic)
+        {
+            this.logic = logic;
             Search = new RelayCommand(() =>
             {
                 //logic
