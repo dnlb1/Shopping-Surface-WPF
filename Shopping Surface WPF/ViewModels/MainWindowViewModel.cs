@@ -26,7 +26,17 @@ namespace Shopping_Surface_WPF.ViewModels
         public ObservableCollection<ISeller> RewardedMembers { get; set; }
 
         //Selected Items
-        public ISeller RegisteredSelected { get; set; }
+        private ISeller registeredselected;
+        public ISeller RegisteredSelected
+        {
+            get { return registeredselected; }
+            set 
+            { 
+                SetProperty(ref registeredselected , value);
+                (AllProduct as RelayCommand).NotifyCanExecuteChanged();
+            }
+        }
+
         public ISeller SearchedSelected { get; set; }
         public ISeller RewardedSelected { get; set; }
 
@@ -86,11 +96,11 @@ namespace Shopping_Surface_WPF.ViewModels
 
             AllProduct = new RelayCommand(() =>
             {
-
+                logic.AllProductPerson(RegisteredSelected);
             },
            () =>
            {
-               return SearchedSelected !=null;
+               return RegisteredSelected != null;
            });
 
             ItemNumberSearch = new RelayCommand(() =>

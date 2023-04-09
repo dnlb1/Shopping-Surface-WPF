@@ -45,8 +45,12 @@ namespace Shopping_Surface_WPF.Logic
         }
         public void AllProductPerson(ISeller Person)
         {
+            SearchedMembers.Clear();
             //Copy the person product list into Ilist
-
+            foreach (var item in Person.ProductList)
+            {
+                SearchedMembers.Add((Products)item);
+            }
         }
     }
 }
