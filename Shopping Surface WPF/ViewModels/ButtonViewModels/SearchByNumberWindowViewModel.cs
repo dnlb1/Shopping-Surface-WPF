@@ -44,7 +44,7 @@ namespace Shopping_Surface_WPF.ViewModels.ButtonViewModels
             set 
             { 
                 SetProperty(ref name , value);
-                (Search as RelayCommand).NotifyCanExecuteChanged();
+                (SearchByName as RelayCommand).NotifyCanExecuteChanged();
             }
         }
 
@@ -69,7 +69,7 @@ namespace Shopping_Surface_WPF.ViewModels.ButtonViewModels
                 logic.AllProductByName(Name);
             },
             () =>
-            { return Name != ""; });
+            { return Name != "" && Name != null; });
         }
     }
 }
