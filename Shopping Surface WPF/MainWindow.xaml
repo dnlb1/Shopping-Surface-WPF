@@ -56,8 +56,19 @@
                 <TextBlock Text="Név szerinti keresés" TextWrapping="Wrap" TextAlignment="Center"/>
             </Button>
         </Grid>
-        <ListBox Grid.Row="1" Grid.Column="1"  BorderThickness="0" ItemsSource="{Binding SearchedMembers}" SelectedItem="{Binding SearchedSelected}"></ListBox>
+        <ListBox Grid.Row="1" Grid.Column="1"  BorderThickness="0" ItemsSource="{Binding SearchedMembers}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border>
+                        <StackPanel Orientation="Vertical">
+                            <Label Content="{Binding ArticleNumber}" ContentStringFormat="Cikkszám: {0}"></Label>
+                            <Label Content="{Binding ProductName}" ContentStringFormat="Termék neve: {0}"></Label>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
         <Button Content="Jutalom" Grid.Column="2" Margin="10" Command="{Binding RewardMember}"></Button>
-        <ListBox Grid.Row="1" Grid.Column="2"  BorderThickness="0" ItemsSource="{Binding RewardedMembers}"  SelectedItem="{Binding RewardedSelected}"></ListBox>
+        <ListBox Grid.Row="1" Grid.Column="2"  BorderThickness="0" ItemsSource="{Binding RewardedMembers}"></ListBox>
     </Grid>
 </Window>

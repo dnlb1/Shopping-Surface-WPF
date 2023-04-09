@@ -47,7 +47,14 @@ namespace Model.Product
 
         public override bool Equals(object obj)
         {
-            return this.GetHashCode() == (obj as Products).GetHashCode();
+            if ((obj as Products) is null) //WPF Bugg Disconnected item after clearing the list
+            {
+                return false;
+            }
+            else
+            {
+                return this.GetHashCode() == (obj as Products).GetHashCode();
+            }
         }
         public override int GetHashCode()
         {

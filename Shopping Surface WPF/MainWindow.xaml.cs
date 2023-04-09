@@ -24,5 +24,6 @@ namespace Shopping_Surface_WPF
         {
             InitializeComponent();
         }
+
     }
 }

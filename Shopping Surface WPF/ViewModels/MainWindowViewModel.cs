@@ -37,9 +37,6 @@ namespace Shopping_Surface_WPF.ViewModels
             }
         }
 
-        public ISeller SearchedSelected { get; set; }
-        public ISeller RewardedSelected { get; set; }
-
         //Buttons - Command
         public ICommand Register { get; set; }
         public ICommand AllProduct { get; set; }
