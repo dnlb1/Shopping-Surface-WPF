@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Model.Structures
 {
-    public class SellerList<T> where T : IComparable
+    public class SellerList<T> : IEnumerable where T : IComparable
     {
         class ListElement
         {
@@ -48,7 +49,6 @@ namespace Model.Structures
                 helperElement.Next = newElement;
             }
         }
-
         public bool ProductSearch(T SearchElement)
         {
             ListElement p = head;
@@ -62,7 +62,6 @@ namespace Model.Structures
             }
             return false;
         }
-
         public int Count()
         {
             int count = 0;
@@ -75,6 +74,41 @@ namespace Model.Structures
             return count;
         }
 
+        public IEnumerator GetEnumerator()
+        {
+            return new ListWalker(head);
+        }
 
+        class ListWalker : IEnumerator
+        {
+            ListElement head;
+            ListElement actual;
+            public ListWalker(ListElement head)
+            {
+                this.head = head;
+                this.actual = new ListElement();
+                this.actual.Next = head;
+            }
+
+            public object Current
+            {
+                get
+                {
+                    return actual.Content;
+                }
+            }
+
+            public bool MoveNext()
+            {
+                actual = actual.Next;
+                return actual != null;
+            }
+
+            public void Reset()
+            {
+                actual = new ListElement();
+                actual.Next = head;
+            }
+        }
     }
 }
