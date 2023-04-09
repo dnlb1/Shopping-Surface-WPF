@@ -36,7 +36,19 @@ namespace Shopping_Surface_WPF.ViewModels.ButtonViewModels
                 (Search as RelayCommand).NotifyCanExecuteChanged();
             }
         }
+        private string name;
 
+        public string Name
+        {
+            get { return name; }
+            set 
+            { 
+                SetProperty(ref name , value);
+                (Search as RelayCommand).NotifyCanExecuteChanged();
+            }
+        }
+
+        public ICommand SearchByName { get; set; }
         public ICommand Search { get; set; }
 
         public SearchByNumberWindowViewModel() : this(IsInDesignMode ? null : Ioc.Default.GetService<ISellerLogic>())
@@ -52,6 +64,12 @@ namespace Shopping_Surface_WPF.ViewModels.ButtonViewModels
             },
             () =>
             { return ArticleNumber > 0; });
+            SearchByName = new RelayCommand(() =>
+            {
+                logic.AllProductByName(Name);
+            },
+            () =>
+            { return Name != ""; });
         }
     }
 }

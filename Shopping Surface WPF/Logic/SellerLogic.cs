@@ -60,5 +60,11 @@ namespace Shopping_Surface_WPF.Logic
             SearchedMembers.Clear();
             SearchedMembers.Add(Tree.ArticleNumberSearch(ArticleNumber));
         }
+
+        public void AllProductByName(string Name)
+        {
+            SearchedMembers.Clear();
+            SearchedMembers.Add(Tree.SearchByName(Name));
+        }
     }
 }
