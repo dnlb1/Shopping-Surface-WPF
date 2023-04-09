@@ -3,6 +3,7 @@ using Microsoft.Toolkit.Mvvm.DependencyInjection;
 using Microsoft.Toolkit.Mvvm.Input;
 using Model.Interface;
 using Model.Product;
+using Shopping_Surface_WPF.Helpers;
 using Shopping_Surface_WPF.Logic;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,7 @@ namespace Shopping_Surface_WPF.ViewModels
     {
         //Logic 
         ISellerLogic logic;
+        IButtonOpener opener;
         //3 List
         public ObservableCollection<ISeller> RegisteredMembers { get; set; }
         public ObservableCollection<Products> SearchedMembers { get; set; }
@@ -66,14 +68,15 @@ namespace Shopping_Surface_WPF.ViewModels
             }
         }
 
-        public MainWindowViewModel() : this(IsInDesignMode ? null : Ioc.Default.GetService<ISellerLogic>()) 
+        public MainWindowViewModel() : this(IsInDesignMode ? null : Ioc.Default.GetService<ISellerLogic>(), Ioc.Default.GetService<IButtonOpener>()) 
         {
 
         }
 
-        public MainWindowViewModel(ISellerLogic logic)
+        public MainWindowViewModel(ISellerLogic logic, IButtonOpener opener)
         {
             this.logic = logic;
+            this.opener = opener;
             RegisteredMembers = new ObservableCollection<ISeller>();
             SearchedMembers = new ObservableCollection<Products>();
             RewardedMembers = new ObservableCollection<ISeller>();
