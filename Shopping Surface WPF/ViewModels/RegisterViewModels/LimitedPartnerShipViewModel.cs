@@ -20,7 +20,7 @@ namespace Shopping_Surface_WPF.ViewModels.RegisterViewModels
     class LimitedPartnerShipViewModel : ObservableRecipient
     {
         ISellerLogic logic;
-        public LTD Person { get; set; }
+        public LimitedPartnership Person { get; set; }
         public Products Product { get; set; }
         //Product
         private int articlenumber;
@@ -101,7 +101,7 @@ namespace Shopping_Surface_WPF.ViewModels.RegisterViewModels
         public LimitedPartnerShipViewModel(ISellerLogic logic)
         {
             this.logic = logic;
-            this.Person = new LTD();
+            this.Person = new LimitedPartnership();
             this.Product = new Products();
 
             AddToPersonProduct = new RelayCommand(() =>
