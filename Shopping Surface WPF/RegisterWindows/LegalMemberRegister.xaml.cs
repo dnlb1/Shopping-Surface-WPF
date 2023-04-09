@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace Shopping_Surface_WPF.RegisterWindows
 {
     /// <summary>
-    /// Interaction logic for LimitedMemberRegister.xaml
+    /// Interaction logic for LegalMemberRegister.xaml
     /// </summary>
-    public partial class LimitedMemberRegister : Window
+    public partial class LegalMemberRegister : Window
     {
-        public LimitedMemberRegister()
+        public LegalMemberRegister()
         {
             InitializeComponent();
         }
