@@ -15,7 +15,7 @@ namespace Shopping_Surface_WPF.Logic
         IRegisterOpenerLogic Register;
 
         IList<ISeller> RegisteredMembers;
-        IList<ISeller> SearchedMembers;
+        IList<Products> SearchedMembers;
         IList<ISeller> RewardedMembers;
 
         BinaryTree<Products, string, int> Tree;
@@ -25,7 +25,7 @@ namespace Shopping_Surface_WPF.Logic
             this.Tree = new BinaryTree<Products, string, int>();
         }
 
-        public void Setup(IList<ISeller> registeredMembers, IList<ISeller> searchedMembers, IList<ISeller> rewardedMembers)
+        public void Setup(IList<ISeller> registeredMembers, IList<Products> searchedMembers, IList<ISeller> rewardedMembers)
         {
             RegisteredMembers = registeredMembers;
             SearchedMembers = searchedMembers;
@@ -46,6 +46,7 @@ namespace Shopping_Surface_WPF.Logic
         public void AllProductPerson(ISeller Person)
         {
             //Copy the person product list into Ilist
+
         }
     }
 }

@@ -7,8 +7,9 @@ namespace Shopping_Surface_WPF.Logic
     interface ISellerLogic
     {
         void AddToRegisteredMembers(ISeller Person);
-        void RegisterMember();
-        void Setup(IList<ISeller> registeredMembers, IList<ISeller> searchedMembers, IList<ISeller> rewardedMembers);
         void AddToTree(Products Product);
+        void AllProductPerson(ISeller Person);
+        void RegisterMember();
+        void Setup(IList<ISeller> registeredMembers, IList<Products> searchedMembers, IList<ISeller> rewardedMembers);
     }
 }

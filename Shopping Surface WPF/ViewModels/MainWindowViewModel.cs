@@ -2,6 +2,7 @@
 using Microsoft.Toolkit.Mvvm.DependencyInjection;
 using Microsoft.Toolkit.Mvvm.Input;
 using Model.Interface;
+using Model.Product;
 using Shopping_Surface_WPF.Logic;
 using System;
 using System.Collections.Generic;
@@ -21,7 +22,7 @@ namespace Shopping_Surface_WPF.ViewModels
         ISellerLogic logic;
         //3 List
         public ObservableCollection<ISeller> RegisteredMembers { get; set; }
-        public ObservableCollection<ISeller> SearchedMembers { get; set; }
+        public ObservableCollection<Products> SearchedMembers { get; set; }
         public ObservableCollection<ISeller> RewardedMembers { get; set; }
 
         //Selected Items
@@ -67,7 +68,7 @@ namespace Shopping_Surface_WPF.ViewModels
         {
             this.logic = logic;
             RegisteredMembers = new ObservableCollection<ISeller>();
-            SearchedMembers = new ObservableCollection<ISeller>();
+            SearchedMembers = new ObservableCollection<Products>();
             RewardedMembers = new ObservableCollection<ISeller>();
 
             logic.Setup(RegisteredMembers, SearchedMembers, RewardedMembers);
