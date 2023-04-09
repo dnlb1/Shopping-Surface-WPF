@@ -15,7 +15,8 @@ namespace Shopping_Surface_WPF.Logic
         }
         public void RegisterLimited()
         {
-
+            LegalMemberRegister W = new LegalMemberRegister();
+            W.ShowDialog();
         }
         public void RegisterLTD()
         {
