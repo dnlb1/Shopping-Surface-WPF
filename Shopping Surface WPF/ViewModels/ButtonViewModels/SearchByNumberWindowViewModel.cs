@@ -48,7 +48,7 @@ namespace Shopping_Surface_WPF.ViewModels.ButtonViewModels
             this.logic = logic;
             Search = new RelayCommand(() =>
             {
-                //logic
+                logic.AllProductByArticleNumber(ArticleNumber);
             },
             () =>
             { return ArticleNumber != 0; });
