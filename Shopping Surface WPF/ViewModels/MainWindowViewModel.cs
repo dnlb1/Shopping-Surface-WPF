@@ -105,7 +105,7 @@ namespace Shopping_Surface_WPF.ViewModels
 
             ItemNumberSearch = new RelayCommand(() =>
             {
-
+                opener.SearchByArticle();
             },
             () =>
             {
