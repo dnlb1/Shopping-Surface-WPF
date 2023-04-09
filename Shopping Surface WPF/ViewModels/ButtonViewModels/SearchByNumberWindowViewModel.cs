@@ -51,7 +51,7 @@ namespace Shopping_Surface_WPF.ViewModels.ButtonViewModels
                 //logic
             },
             () =>
-            { return ArticleNumber != null; });
+            { return ArticleNumber != 0; });
         }
     }
 }
