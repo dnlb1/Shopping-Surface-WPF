@@ -4,8 +4,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Shopping_Surface_WPF.ButtonWindows"
+        xmlns:VM="clr-namespace:Shopping_Surface_WPF.ViewModels.ButtonViewModels"
         mc:Ignorable="d"
         Title="SearchByNameWindow" Height="220" Width="343">
+    <Window.DataContext>
+        <VM:SearchByNumberWindowViewModel></VM:SearchByNumberWindowViewModel>
+    </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"></RowDefinition>
@@ -13,7 +17,7 @@
             <RowDefinition Height="1*"></RowDefinition>
         </Grid.RowDefinitions>
         <Label Content="Névszerinti keresés" VerticalContentAlignment="Center"></Label>
-        <TextBox Grid.Row="1" VerticalContentAlignment="Center"></TextBox>
+        <TextBox Grid.Row="1" VerticalContentAlignment="Center" Text="{Binding Name,UpdateSourceTrigger=PropertyChanged}"></TextBox>
         <Button Grid.Row="2" Content="Mehet" Command="{Binding SearchByName}"></Button>
     </Grid>
 </Window>
