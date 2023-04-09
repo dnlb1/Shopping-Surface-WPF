@@ -102,11 +102,11 @@ namespace Shopping_Surface_WPF.ViewModels.RegisterViewModels
         {
             this.logic = logic;
             this.Person = new PrivatePerson();
-            this.Product = new Products();
 
             AddToPersonProduct = new RelayCommand(() => 
-            { 
+            {
                 //Maybe need logic, but its faster 
+                this.Product = new Products();
                 Product.ProductName = ProductName;
                 Product.ArticleNumber = ArticleNumber;
                 Person.ProductList.ArrangedAdd(Product);
