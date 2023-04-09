@@ -9,6 +9,7 @@ namespace Model.Structures
     public class BinaryTree<T,N,K> where K: IComparable
     {
         TreeElement root;
+        List<T> products = new List<T>();
         class TreeElement //Adott termék, cikkszám alapján rendezve
         {
             public T Contant;
@@ -75,17 +76,18 @@ namespace Model.Structures
                 return default(T); 
             }
         }
-        public T SearchByName(N Name)
+        public List<T> SearchByName(N Name)
         {
+            this.products.Clear();
             return _PreOrder(root, Name);
         }
-        private T _PreOrder(TreeElement p, N Name)
+        private List<T> _PreOrder(TreeElement p, N Name)
         {
             if (p != null)
             {
                 if (p.ByName.Equals(Name))
                 {
-                    return p.Contant;
+                    products.Add(p.Contant);
                 }
                 else
                 {
@@ -93,7 +95,7 @@ namespace Model.Structures
                     _PreOrder(p.right, Name);
                 }
             }
-            return default(T); //ha nincs ilyen elem akkor null.
+            return products; //ha nincs ilyen elem akkor null.
         }
 
     }

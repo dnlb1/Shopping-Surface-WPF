@@ -18,6 +18,6 @@
         </Grid.RowDefinitions>
         <Label Content="Névszerinti keresés" VerticalContentAlignment="Center"></Label>
         <TextBox Grid.Row="1" VerticalContentAlignment="Center" Text="{Binding Name,UpdateSourceTrigger=PropertyChanged}"></TextBox>
-        <Button Grid.Row="2" Content="Mehet" Command="{Binding SearchByName}"></Button>
+        <Button Grid.Row="2" Content="Mehet" Command="{Binding SearchByName}" Click="Button_Click"></Button>
     </Grid>
 </Window>
