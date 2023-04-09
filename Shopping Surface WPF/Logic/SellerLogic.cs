@@ -1,4 +1,6 @@
 ﻿using Model.Interface;
+using Model.Product;
+using Model.Structures;
 using Shopping_Surface_WPF.Helpers;
 using System;
 using System.Collections.Generic;
@@ -16,9 +18,11 @@ namespace Shopping_Surface_WPF.Logic
         IList<ISeller> SearchedMembers;
         IList<ISeller> RewardedMembers;
 
+        BinaryTree<Products, string, int> Tree;
         public SellerLogic(IRegisterOpenerLogic Register)
         {
             this.Register = Register;
+            this.Tree = new BinaryTree<Products, string, int>();
         }
 
         public void Setup(IList<ISeller> registeredMembers, IList<ISeller> searchedMembers, IList<ISeller> rewardedMembers)
