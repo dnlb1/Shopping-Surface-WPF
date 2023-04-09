@@ -110,6 +110,7 @@ namespace Shopping_Surface_WPF.ViewModels.RegisterViewModels
                 Product.ProductName = ProductName;
                 Product.ArticleNumber = ArticleNumber;
                 Person.ProductList.Add(Product);
+                logic.AddToTree(Product);
                 (AddToList as RelayCommand).NotifyCanExecuteChanged();
 
             }, () => { return (ProductName != "" && ProductName != null) && ArticleNumber != 0; });
