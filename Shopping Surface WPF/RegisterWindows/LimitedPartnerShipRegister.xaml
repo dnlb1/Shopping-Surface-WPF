@@ -18,7 +18,7 @@
             <RowDefinition Height="1*"></RowDefinition>
         </Grid.RowDefinitions>
         <Viewbox>
-            <Label Content="Magánszemély regisztráció"></Label>
+            <Label Content="KFT regisztráció"></Label>
         </Viewbox>
 
         <Grid Grid.Row="1">
