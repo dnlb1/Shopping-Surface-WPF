@@ -64,7 +64,11 @@ namespace Shopping_Surface_WPF.Logic
         public void AllProductByName(string Name)
         {
             SearchedMembers.Clear();
-            SearchedMembers.Add(Tree.SearchByName(Name));
+            foreach (var item in Tree.SearchByName(Name))
+            {
+                SearchedMembers.Add(item);
+            }
+            ;
         }
     }
 }

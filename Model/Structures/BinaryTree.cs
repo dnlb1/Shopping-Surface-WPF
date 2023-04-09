@@ -79,9 +79,10 @@ namespace Model.Structures
         public List<T> SearchByName(N Name)
         {
             this.products.Clear();
-            return _PreOrder(root, Name);
+            _PreOrder(root, Name);
+            return products;
         }
-        private List<T> _PreOrder(TreeElement p, N Name)
+        private void _PreOrder(TreeElement p, N Name)
         {
             if (p != null)
             {
@@ -95,7 +96,6 @@ namespace Model.Structures
                     _PreOrder(p.right, Name);
                 }
             }
-            return products; //ha nincs ilyen elem akkor null.
         }
 
     }
