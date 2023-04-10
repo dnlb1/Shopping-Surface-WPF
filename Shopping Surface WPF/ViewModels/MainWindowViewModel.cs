@@ -46,6 +46,9 @@ namespace Shopping_Surface_WPF.ViewModels
         public ICommand NameSearch { get; set; }
         public ICommand RewardMember { get; set; }
         public ICommand Clear { get; set; }
+        public ICommand StartRewarding { get; set; }
+        private bool Started { get; set; }
+        public ICommand StopRewarding { get; set; }
 
         //Other
         private Visibility vis;
@@ -78,6 +81,7 @@ namespace Shopping_Surface_WPF.ViewModels
         {
             this.logic = logic;
             this.opener = opener;
+            Started = false;
             RegisteredMembers = new ObservableCollection<ISeller>();
             SearchedMembers = new ObservableCollection<Products>();
             RewardedMembers = new ObservableCollection<ISeller>();
@@ -139,6 +143,28 @@ namespace Shopping_Surface_WPF.ViewModels
             {
                 return true;
             });
+
+           StartRewarding = new RelayCommand(() =>
+           {
+               Started = true;
+               (StopRewarding as RelayCommand).NotifyCanExecuteChanged();
+               logic.StartRewarding();
+           },
+           () =>
+           {
+               return true;
+           }); 
+           
+           StopRewarding = new RelayCommand(() =>
+           {
+               Started = false;
+               (StopRewarding as RelayCommand).NotifyCanExecuteChanged();
+               logic.StopRewarding();
+           },
+           () =>
+           {
+                return Started;
+           });
 
         }
 
