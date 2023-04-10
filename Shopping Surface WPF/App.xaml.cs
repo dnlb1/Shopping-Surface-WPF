@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Toolkit.Mvvm.DependencyInjection;
+using Microsoft.Toolkit.Mvvm.Messaging;
 using Shopping_Surface_WPF.Helpers;
 using Shopping_Surface_WPF.Logic;
 using System;
@@ -24,6 +25,7 @@ namespace Shopping_Surface_WPF
                 .AddSingleton<IRegisterLogic,RegisterLogic>()
                 .AddSingleton<IButtonOpener,ButtonOpener>()
                 .AddSingleton<IRegisterOpenerLogic,RegisterOpenerLogic>()
+                .AddSingleton<IMessenger>(WeakReferenceMessenger.Default)
                 .BuildServiceProvider());
         }
     }

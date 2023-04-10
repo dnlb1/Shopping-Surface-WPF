@@ -1,4 +1,5 @@
-﻿using Model.Interface;
+﻿using Microsoft.Toolkit.Mvvm.Messaging;
+using Model.Interface;
 using Model.Product;
 using Model.Structures;
 using Shopping_Surface_WPF.Helpers;
@@ -14,7 +15,7 @@ namespace Shopping_Surface_WPF.Logic
     class SellerLogic : ISellerLogic
     {
         IRegisterOpenerLogic Register;
-
+        IMessenger msg;
         IList<ISeller> RegisteredMembers;
         IList<Products> SearchedMembers;
         IList<ISeller> RewardedMembers;
@@ -22,15 +23,18 @@ namespace Shopping_Surface_WPF.Logic
         DispatcherTimer AI;
         Random r = new Random();
         public List<Products> Gifts { get; set; }
+        private bool added;
 
         BinaryTree<Products, string, int> Tree;
-        public SellerLogic(IRegisterOpenerLogic Register)
+        public SellerLogic(IRegisterOpenerLogic Register,IMessenger msg)
         {
             this.Register = Register;
+            this.added = true;
+            this.msg = msg;
             this.Tree = new BinaryTree<Products, string, int>();
             this.AI = new DispatcherTimer();
             this.Gifts = new List<Products>();
-            AI.Interval = new TimeSpan(10000);
+            AI.Interval = new TimeSpan(1000);
             AI.Tick += AI_Tick;
         }
 
@@ -51,6 +55,7 @@ namespace Shopping_Surface_WPF.Logic
         }
         public void AddToRegisteredMembers(ISeller Person)
         {
+            added = true;
             RegisteredMembers.Add(Person);
         }
         public void AddToTree(Products Product)
@@ -105,6 +110,7 @@ namespace Shopping_Surface_WPF.Logic
                         Gifts.Remove(Gifts[idx]);
                     }
                 }
+                added = false;
             }
             
         }
@@ -130,11 +136,15 @@ namespace Shopping_Surface_WPF.Logic
 
         private void AI_Tick(object sender, EventArgs e)
         {
-            RewardMembers();
+            if (added)
+            {
+                RewardMembers();
+            }
         }
 
         public void StopRewarding()
         {
+            added = true;
             AI.Stop();
         }
     }

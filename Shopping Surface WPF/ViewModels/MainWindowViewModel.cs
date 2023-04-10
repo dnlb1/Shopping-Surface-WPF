@@ -48,7 +48,21 @@ namespace Shopping_Surface_WPF.ViewModels
         public ICommand RewardMember { get; set; }
         public ICommand Clear { get; set; }
         public ICommand StartRewarding { get; set; }
-        private bool Started { get; set; }
+        private bool started;
+
+        public bool Started
+        {
+            get { return started; }
+            set 
+            { 
+                SetProperty(ref started , value);
+                if (StopRewarding != null)
+                {
+                    (StopRewarding as RelayCommand).NotifyCanExecuteChanged();
+                }
+            }
+        }
+
         public ICommand StopRewarding { get; set; }
 
         //Other
@@ -148,9 +162,12 @@ namespace Shopping_Surface_WPF.ViewModels
 
            StartRewarding = new RelayCommand(() =>
            {
-               Started = true;
-               (StopRewarding as RelayCommand).NotifyCanExecuteChanged();
-               logic.StartRewarding();
+               if (RegisteredMembers.Count() >0)
+               {
+                   Started = true;
+                   (StopRewarding as RelayCommand).NotifyCanExecuteChanged();
+                   logic.StartRewarding();
+               }
            },
            () =>
            {

@@ -86,7 +86,7 @@
                     <ColumnDefinition Width="1*"></ColumnDefinition>
                     <ColumnDefinition Width="1*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <ListBox BorderThickness="0" ItemsSource="{Binding RewardedMembers}">
+                <ListBox BorderThickness="0" ItemsSource="{Binding RewardedMembers, UpdateSourceTrigger=PropertyChanged}">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel>
