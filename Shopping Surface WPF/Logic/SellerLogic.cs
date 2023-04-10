@@ -93,7 +93,7 @@ namespace Shopping_Surface_WPF.Logic
 
             foreach (var item in RegisteredMembers)
             {
-                if (Gifts.Count > 0)
+                if (item.ProductList.Count() >= avg && Gifts.Count > 0)
                 {
                     //We can give them gift by rating
                     for (int i = 0; i < item.Rating && Gifts.Count>0; i++)

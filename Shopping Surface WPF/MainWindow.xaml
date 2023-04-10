@@ -90,7 +90,13 @@
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel>
-                                <Label Content="{Binding ContactPerson}" ContentStringFormat="Ajándékot kapott: {0}"></Label>
+                                <Label Content="{Binding ContactPerson}" ContentStringFormat="Ajándékot kapott: {0}">
+                                    <Label.Resources>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="TextWrapping" Value="Wrap"></Setter>
+                                        </Style>
+                                    </Label.Resources>
+                                </Label>
                             </StackPanel>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
@@ -99,7 +105,13 @@
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Vertical">
-                                <Label Content="{Binding ProductName}" ContentStringFormat="Ajándék neve: {0}"></Label>
+                                <Label Content="{Binding ProductName}" ContentStringFormat="Ajándék neve: {0}">
+                                    <Label.Resources>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="TextWrapping" Value="Wrap"></Setter>
+                                        </Style>
+                                    </Label.Resources>
+                                </Label>
                             </StackPanel>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
