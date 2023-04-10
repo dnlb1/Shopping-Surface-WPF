@@ -26,6 +26,7 @@ namespace Shopping_Surface_WPF.ViewModels
         public ObservableCollection<ISeller> RegisteredMembers { get; set; }
         public ObservableCollection<Products> SearchedMembers { get; set; }
         public ObservableCollection<ISeller> RewardedMembers { get; set; }
+        public ObservableCollection<Products> Gifted { get; set; }
 
         //Selected Items
         private ISeller registeredselected;
@@ -85,8 +86,9 @@ namespace Shopping_Surface_WPF.ViewModels
             RegisteredMembers = new ObservableCollection<ISeller>();
             SearchedMembers = new ObservableCollection<Products>();
             RewardedMembers = new ObservableCollection<ISeller>();
+            Gifted = new ObservableCollection<Products>();
 
-            logic.Setup(RegisteredMembers, SearchedMembers, RewardedMembers);
+            logic.Setup(RegisteredMembers, SearchedMembers, RewardedMembers, Gifted);
 
             Register = new RelayCommand(() =>
             {

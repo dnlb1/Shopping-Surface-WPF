@@ -11,7 +11,7 @@ namespace Shopping_Surface_WPF.Logic
         void AllProductByArticleNumber(int ArticleNumber);
         void AllProductPerson(ISeller Person);
         void RegisterMember();
-        void Setup(IList<ISeller> registeredMembers, IList<Products> searchedMembers, IList<ISeller> rewardedMembers);
+        public void Setup(IList<ISeller> registeredMembers, IList<Products> searchedMembers, IList<ISeller> rewardedMembers, IList<Products> gifted);
         void ClearList();
         void AllProductByName(string Name);
         void StartRewarding();
