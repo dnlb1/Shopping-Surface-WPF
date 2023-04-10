@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Threading;
 
 namespace Shopping_Surface_WPF.Logic
 {
@@ -17,12 +18,16 @@ namespace Shopping_Surface_WPF.Logic
         IList<ISeller> RegisteredMembers;
         IList<Products> SearchedMembers;
         IList<ISeller> RewardedMembers;
+        DispatcherTimer AI;
 
         BinaryTree<Products, string, int> Tree;
         public SellerLogic(IRegisterOpenerLogic Register)
         {
             this.Register = Register;
             this.Tree = new BinaryTree<Products, string, int>();
+            this.AI = new DispatcherTimer();
+            AI.Interval = new TimeSpan(10000);
+            AI.Tick += AI_Tick;
         }
 
         public void ClearList()
@@ -69,17 +74,25 @@ namespace Shopping_Surface_WPF.Logic
             }
             ;
         }
+
+        //Rewarding - with Ai
         private void RewardMembers()
         {
-
+            //Logic for rewarding
         }
         public void StartRewarding()
         {
-
+            AI.Start();
         }
+
+        private void AI_Tick(object sender, EventArgs e)
+        {
+            RewardMembers();
+        }
+
         public void StopRewarding()
         {
-
+            AI.Stop();
         }
     }
 }
