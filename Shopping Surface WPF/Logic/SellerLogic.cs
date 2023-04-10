@@ -60,7 +60,6 @@ namespace Shopping_Surface_WPF.Logic
             SearchedMembers.Clear();
             SearchedMembers.Add(Tree.ArticleNumberSearch(ArticleNumber));
         }
-
         public void AllProductByName(string Name)
         {
             SearchedMembers.Clear();
@@ -69,6 +68,18 @@ namespace Shopping_Surface_WPF.Logic
                 SearchedMembers.Add(item);
             }
             ;
+        }
+        private void RewardMembers()
+        {
+
+        }
+        public void StartRewarding()
+        {
+
+        }
+        public void StopRewarding()
+        {
+
         }
     }
 }
